@@ -445,3 +445,33 @@ Caused by: org.postgresql.util.PSQLException: FATAL: Tenant or user not found
 2025-04-01 10:31 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@75c77cd8 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
 2025-04-01 10:31 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@a68d69a (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
 2025-04-01 10:31 DEBUG c.c.u.a.u.CreateUserInteractor - User: diogo@outlook.com created with id: 1
+2025-04-01 14:27 INFO  c.c.u.ReservationControllerApplicationTests - Starting ReservationControllerApplicationTests using Java 17.0.12 with PID 10092 (started by Ely in C:\Marcos Valente\canoacaicara)
+2025-04-01 14:27 DEBUG c.c.u.ReservationControllerApplicationTests - Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-04-01 14:27 INFO  c.c.u.ReservationControllerApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-04-01 14:27 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-01 14:27 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-01 14:27 INFO  c.c.u.ReservationControllerApplicationTests - Started ReservationControllerApplicationTests in 10.74 seconds (process running for 12.076)
+2025-04-01 14:28 INFO  c.c.u.ReservationControllerApplicationTests - Starting ReservationControllerApplicationTests using Java 17.0.12 with PID 4828 (started by Ely in C:\Marcos Valente\canoacaicara)
+2025-04-01 14:28 DEBUG c.c.u.ReservationControllerApplicationTests - Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-04-01 14:28 INFO  c.c.u.ReservationControllerApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-04-01 14:28 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-01 14:28 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-01 14:28 INFO  c.c.u.ReservationControllerApplicationTests - Started ReservationControllerApplicationTests in 11.888 seconds (process running for 13.331)
+2025-04-01 14:29 INFO  com.canoacaicara.CanoaCaicara - Starting CanoaCaicara using Java 17.0.12 with PID 5164 (C:\Marcos Valente\canoacaicara\target\classes started by Ely in C:\Marcos Valente\canoacaicara)
+2025-04-01 14:29 DEBUG com.canoacaicara.CanoaCaicara - Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-04-01 14:29 INFO  com.canoacaicara.CanoaCaicara - No active profile set, falling back to 1 default profile: "default"
+2025-04-01 14:29 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-01 14:30 DEBUG c.c.s.jwt.AuthenticationFilter - Filter 'authenticationFilter' configured for use
+2025-04-01 14:30 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-01 14:30 INFO  com.canoacaicara.CanoaCaicara - Started CanoaCaicara in 8.711 seconds (process running for 9.126)
+2025-04-01 14:30 INFO  com.canoacaicara.CanoaCaicara - Application running
+2025-04-01 14:39 DEBUG c.c.u.a.u.CreateUserInteractor - Trying to create a new User: billy@outlook.com
+2025-04-01 14:39 DEBUG c.c.u.a.u.CreateUserInteractor - User: billy@outlook.com created with id: 1
+2025-04-01 14:51 INFO  com.canoacaicara.CanoaCaicara - Starting CanoaCaicara using Java 17.0.12 with PID 5164 (C:\Marcos Valente\canoacaicara\target\classes started by Ely in C:\Marcos Valente\canoacaicara)
+2025-04-01 14:51 DEBUG com.canoacaicara.CanoaCaicara - Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-04-01 14:51 INFO  com.canoacaicara.CanoaCaicara - No active profile set, falling back to 1 default profile: "default"
+2025-04-01 14:51 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-01 14:51 DEBUG c.c.s.jwt.AuthenticationFilter - Filter 'authenticationFilter' configured for use
+2025-04-01 14:51 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-01 14:51 INFO  com.canoacaicara.CanoaCaicara - Started CanoaCaicara in 5.123 seconds (process running for 1299.759)
+2025-04-01 14:51 INFO  com.canoacaicara.CanoaCaicara - Application running
