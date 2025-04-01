@@ -1,29 +1,27 @@
 package com.canoacaicara.user.main;
 
-import com.canoacaicara.security.jwt.AuthenticationFilter;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+import com.canoacaicara.groups.usecases.EnrollUserInteractor;
 import com.canoacaicara.security.jwt.JWTService;
-import com.canoacaicara.security.jwt.UserDetailsServiceImpl;
 import com.canoacaicara.user.application.mapper.UserDTOMapper;
-import com.canoacaicara.user.application.usecases.LoginUserInteractor;
-import com.canoacaicara.user.infrastructure.gateways.UserGateway;
 import com.canoacaicara.user.application.usecases.CreateUserInteractor;
 import com.canoacaicara.user.application.usecases.GetUserInteractor;
 import com.canoacaicara.user.application.usecases.GetUsersInteractor;
+import com.canoacaicara.user.application.usecases.LoginUserInteractor;
 import com.canoacaicara.user.infrastructure.gateways.UserEntityMapper;
+import com.canoacaicara.user.infrastructure.gateways.UserGateway;
 import com.canoacaicara.user.infrastructure.gateways.UserRepositoryGateway;
 import com.canoacaicara.user.infrastructure.persistance.UserRepository;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.password.PasswordEncoder;
+
 
 @Configuration
 public class UserConfig {
     @Bean
-    CreateUserInteractor createUserCase(UserGateway userGateway, PasswordEncoder passwordEncoder, UserDTOMapper userDTOMapper) {
-        return new CreateUserInteractor(userGateway, passwordEncoder, userDTOMapper);
+    CreateUserInteractor createUserCase(UserGateway userGateway, PasswordEncoder passwordEncoder, EnrollUserInteractor enrollUserInteractor, UserDTOMapper userDTOMapper) {
+        return new CreateUserInteractor(userGateway, passwordEncoder, enrollUserInteractor, userDTOMapper);
     }
 
     @Bean

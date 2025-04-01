@@ -1,17 +1,24 @@
 package com.canoacaicara.user.infrastructure.controllers;
 
+import java.util.List;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.canoacaicara.common.ApiReponse;
 import com.canoacaicara.security.jwt.TokenJWT;
 import com.canoacaicara.user.application.usecases.CreateUserInteractor;
 import com.canoacaicara.user.application.usecases.GetUserInteractor;
 import com.canoacaicara.user.application.usecases.GetUsersInteractor;
 import com.canoacaicara.user.application.usecases.LoginUserInteractor;
-import jakarta.validation.Valid;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import jakarta.validation.Valid;
 
 
 @RestController
@@ -31,19 +38,19 @@ public class UserController {
 
     @PostMapping()
     ResponseEntity<ApiReponse<UserResponse>> createUser(@Valid @RequestBody CreateUserRequest request) throws Exception {
-        ApiReponse<UserResponse> response = new ApiReponse<>("User created successfully!", createUserInteractor.createUser(request));
+        ApiReponse<UserResponse> response = new ApiReponse<>("Usuário criado com sucesso!", createUserInteractor.createUser(request));
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
     @GetMapping("/")
     ResponseEntity<ApiReponse<UserResponse>> getUser(@RequestParam String email) {
-        ApiReponse<UserResponse> response = new ApiReponse<>("User found!", getUserInteractor.getUser(email));
+        ApiReponse<UserResponse> response = new ApiReponse<>("Usuário encontrado!", getUserInteractor.getUser(email));
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
     @GetMapping
     ResponseEntity<ApiReponse<List<UserResponse>>> getUsers() {
-        ApiReponse<List<UserResponse>> response = new ApiReponse<>("Users found!", getUsersInteractor.getUsers());
+        ApiReponse<List<UserResponse>> response = new ApiReponse<>("Usuários encontrados!", getUsersInteractor.getUsers());
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
