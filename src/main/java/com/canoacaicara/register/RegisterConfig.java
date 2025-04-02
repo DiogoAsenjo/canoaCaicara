@@ -13,28 +13,28 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RegisterConfig {
     @Bean
-    CreateRegisterInteractor createRegisterInteractor(RegisterRepositoryAdapter registerRepositoryAdapter, RegisterDTOMapper registerDTOMapper, JWTService jwtService) {
-        return new CreateRegisterInteractor(registerRepositoryAdapter, registerDTOMapper, jwtService);
+    CreateRegister createRegisterInteractor(RegisterRepositoryAdapter registerRepositoryAdapter, RegisterDTOMapper registerDTOMapper, JWTService jwtService) {
+        return new CreateRegister(registerRepositoryAdapter, registerDTOMapper, jwtService);
     }
 
     @Bean
-    GetRegisterInteractor getRegisterInteractor(RegisterRepositoryAdapter registerRepositoryAdapter, RegisterDTOMapper registerDTOMapper, JWTService jwtService, CalculatePaymentInteractor calculatePaymentInteractor) {
-        return new GetRegisterInteractor(registerRepositoryAdapter, registerDTOMapper, jwtService, calculatePaymentInteractor);
+    GetRegister getRegisterInteractor(RegisterRepositoryAdapter registerRepositoryAdapter, RegisterDTOMapper registerDTOMapper, JWTService jwtService, CalculatePayment calculatePayment) {
+        return new GetRegister(registerRepositoryAdapter, registerDTOMapper, jwtService, calculatePayment);
     }
 
     @Bean
-    UpdateRegisterInteractor updateRegisterInteractor(RegisterRepositoryAdapter registerRepositoryAdapter, RegisterDTOMapper registerDTOMapper, JWTService jwtService) {
-        return new UpdateRegisterInteractor(registerRepositoryAdapter, registerDTOMapper, jwtService);
+    UpdateRegister updateRegisterInteractor(RegisterRepositoryAdapter registerRepositoryAdapter, RegisterDTOMapper registerDTOMapper, JWTService jwtService) {
+        return new UpdateRegister(registerRepositoryAdapter, registerDTOMapper, jwtService);
     }
 
     @Bean
-    DeleteRegisterInteractor deleteRegisterInteractor(RegisterRepositoryAdapter registerRepositoryAdapter, RegisterDTOMapper registerDTOMapper, JWTService jwtService) {
-        return new DeleteRegisterInteractor(registerRepositoryAdapter, registerDTOMapper, jwtService);
+    DeleteRegister deleteRegisterInteractor(RegisterRepositoryAdapter registerRepositoryAdapter, RegisterDTOMapper registerDTOMapper, JWTService jwtService) {
+        return new DeleteRegister(registerRepositoryAdapter, registerDTOMapper, jwtService);
     }
 
     @Bean
-    CalculatePaymentInteractor calculatePaymentInteractor() {
-        return new CalculatePaymentInteractor();
+    CalculatePayment calculatePaymentInteractor() {
+        return new CalculatePayment();
     }
 
     @Bean

@@ -8,12 +8,12 @@ import com.canoacaicara.security.jwt.JWTService;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class DeleteRegisterInteractor {
+public class DeleteRegister {
     private final RegisterRepositoryAdapter registerRepositoryAdapter;
     private final RegisterDTOMapper registerDTOMapper;
     private final JWTService jwtService;
 
-    public DeleteRegisterInteractor(RegisterRepositoryAdapter registerRepositoryAdapter, RegisterDTOMapper registerDTOMapper, JWTService jwtService) {
+    public DeleteRegister(RegisterRepositoryAdapter registerRepositoryAdapter, RegisterDTOMapper registerDTOMapper, JWTService jwtService) {
         this.registerRepositoryAdapter = registerRepositoryAdapter;
         this.registerDTOMapper = registerDTOMapper;
         this.jwtService = jwtService;

@@ -12,12 +12,12 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.List;
 
 @Slf4j
-public class CreateRegisterInteractor {
+public class CreateRegister {
     private final RegisterRepositoryAdapter registerRepositoryAdapter;
     private final RegisterDTOMapper registerDTOMapper;
     private final JWTService jwtService;
 
-    public CreateRegisterInteractor(RegisterRepositoryAdapter registerRepositoryAdapter, RegisterDTOMapper registerDTOMapper, JWTService jwtService) {
+    public CreateRegister(RegisterRepositoryAdapter registerRepositoryAdapter, RegisterDTOMapper registerDTOMapper, JWTService jwtService) {
         this.registerRepositoryAdapter = registerRepositoryAdapter;
         this.registerDTOMapper = registerDTOMapper;
         this.jwtService = jwtService;

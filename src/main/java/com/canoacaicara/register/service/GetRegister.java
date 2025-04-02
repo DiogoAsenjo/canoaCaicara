@@ -12,17 +12,17 @@ import com.canoacaicara.security.jwt.JWTService;
 import java.time.LocalDate;
 import java.util.List;
 
-public class GetRegisterInteractor {
+public class GetRegister {
     private final RegisterRepositoryAdapter registerRepositoryAdapter;
     private final RegisterDTOMapper registerDTOMapper;
     private final JWTService jwtService;
-    private final CalculatePaymentInteractor calculatePaymentInteractor;
+    private final CalculatePayment calculatePayment;
 
-    public GetRegisterInteractor(RegisterRepositoryAdapter registerRepositoryAdapter, RegisterDTOMapper registerDTOMapper, JWTService jwtService, CalculatePaymentInteractor calculatePaymentInteractor) {
+    public GetRegister(RegisterRepositoryAdapter registerRepositoryAdapter, RegisterDTOMapper registerDTOMapper, JWTService jwtService, CalculatePayment calculatePayment) {
         this.registerRepositoryAdapter = registerRepositoryAdapter;
         this.registerDTOMapper = registerDTOMapper;
         this.jwtService = jwtService;
-        this.calculatePaymentInteractor = calculatePaymentInteractor;
+        this.calculatePayment = calculatePayment;
     }
 
     public List<RegisterResponse> getUserRegisters(String token) {
@@ -61,7 +61,7 @@ public class GetRegisterInteractor {
             throw new RegisterNotFoundException("Registers not found");
         }
 
-        int earnings = calculatePaymentInteractor.calculateEarnings(registersFound);
+        int earnings = calculatePayment.calculateEarnings(registersFound);
 
         return new RegisterByMonthResponse(earnings, registersFound.stream().map(registerDTOMapper::toResponse).toList());
 

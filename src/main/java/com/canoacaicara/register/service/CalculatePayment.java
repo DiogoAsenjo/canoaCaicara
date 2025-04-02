@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 
 import java.util.List;
 
-public class CalculatePaymentInteractor {
+public class CalculatePayment {
     @Value("${com.canoacaicara.aula}")
     public int aulaValue;
 
