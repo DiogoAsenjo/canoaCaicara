@@ -1,9 +1,9 @@
 package com.canoacaicara.security;
 
+import com.canoacaicara.user.repository.persistance.UserJpaRepository;
 import com.canoacaicara.security.jwt.AuthenticationFilter;
 import com.canoacaicara.security.jwt.JWTService;
 import com.canoacaicara.security.jwt.UserDetailsServiceImpl;
-import com.canoacaicara.user.infrastructure.persistance.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -27,7 +27,7 @@ public class SecurityConfig {
     }
 
     @Bean
-    UserDetailsServiceImpl userDetailsService(UserRepository userRepository) {
-        return new UserDetailsServiceImpl(userRepository);
+    UserDetailsServiceImpl userDetailsService(UserJpaRepository userJpaRepository) {
+        return new UserDetailsServiceImpl(userJpaRepository);
     }
 }
