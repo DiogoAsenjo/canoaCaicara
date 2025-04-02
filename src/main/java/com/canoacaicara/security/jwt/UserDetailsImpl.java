@@ -1,6 +1,6 @@
 package com.canoacaicara.security.jwt;
 
-import com.canoacaicara.user.infrastructure.persistance.UserEntity;
+import com.canoacaicara.user.repository.persistance.UserEntity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
