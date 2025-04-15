@@ -1,6 +1,11 @@
 package com.canoacaicara.user.repository.persistance;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import com.canoacaicara.common.enums.Roles;
+import com.canoacaicara.groups.persistance.GroupEntity;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
@@ -11,20 +16,34 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private int id;
+
     @NotNull
     private String name;
+    
     @NotNull
     @Column(unique = true)
     private String email;
+    
     @NotNull
     private String password;
+    
     @NotNull
     private String whatsapp;
+    
     @NotNull
     private String pix;
+    
     @NotNull
     @Enumerated(EnumType.STRING)
     private Roles role;
+
+    @ManyToMany
+    @JoinTable(
+        name= "user-group",
+        joinColumns = @JoinColumn(name="user_id"),
+        inverseJoinColumns = @JoinColumn(name = "group_id")
+    )
+    private Set<GroupEntity> groups = new HashSet<>();
 
     //Constructors
     public UserEntity() {}
@@ -37,7 +56,6 @@ public class UserEntity {
         this.pix = pix;
         this.role = role;
     }
-
 
     //Getter and setters
     public int getId() {
@@ -94,5 +112,13 @@ public class UserEntity {
 
     public void setRole(Roles role) {
         this.role = role;
+    }
+
+    public Set<GroupEntity> getGroups(){
+        return groups;
+    }
+
+    public void setGroups(Set<GroupEntity> groups){
+        this.groups = groups;
     }
 }

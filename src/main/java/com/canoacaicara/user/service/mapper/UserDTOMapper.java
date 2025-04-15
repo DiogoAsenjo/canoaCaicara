@@ -10,6 +10,6 @@ public class UserDTOMapper {
     }
 
     public User toUserDomain(CreateUserRequest request) {
-        return new User(request.name(), request.email(), request.password(), request.whatsapp(), request.pix(), request.role());
+        return new User(request.name(), request.email(), request.password(), request.whatsapp(), request.pix(), request.enrolledGroupsIds(), request.role());
     }
 }

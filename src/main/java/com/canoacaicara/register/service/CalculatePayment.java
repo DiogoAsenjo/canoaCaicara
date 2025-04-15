@@ -26,6 +26,7 @@ public class CalculatePayment {
             case AULA -> register.quantity() * aulaValue;
             case PASSEIO -> register.quantity() * passeioValue;
             case COORPORATIVO -> register.quantity() * corporativoValue;
+            case TREINO -> register.quantity() * aulaValue; // Treino possui mesmo valor da aula. Ajustar se necessário
         };
     }
 }
